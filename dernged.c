@@ -4,6 +4,10 @@
 #include <stdint.h>
 #include "dernged.h"
 
+int eugh(void){
+  srand(time(NULL));
+}
+
 // the rng table from doom's source code
 uint8_t RNGTable[256] = {
   0  , 8  , 109, 220, 222, 241, 149, 107, 75 , 248, 254, 140, 16 , 66 , 74 , 21 ,
@@ -38,7 +42,6 @@ float getRandRange(float min, float max){
   return total;
 }
 
-srand(time(NULL));
 void regenTable(){
   int i;
   for(i = 0; i < 256; i++){
